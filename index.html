@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sarah! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background particles container -->
+    <div id="particles-container"></div>
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Homepage Section -->
+        <section id="homepage" class="section active">
+            <div class="confetti-container" id="confetti-container"></div>
+            
+            <div class="homepage-content">
+                <div class="birthday-text">
+                    <h1 class="main-title">
+                        <span class="word-animate" data-delay="0">Happy</span>
+                        <span class="word-animate" data-delay="500">Birthday</span>
+                    </h1>
+                    <h2 class="name-title">
+                        <span class="letter-animate">S</span>
+                        <span class="letter-animate">a</span>
+                        <span class="letter-animate">r</span>
+                        <span class="letter-animate">a</span>
+                        <span class="letter-animate">h</span>
+                        <span class="letter-animate">!</span>
+                    </h2>
+                    <!-- CUSTOMIZATION: Replace "Sarah" with your friend's name -->
+                </div>
+                
+                <div class="floating-balloons">
+                    <div class="balloon balloon-1">🎈</div>
+                    <div class="balloon balloon-2">🎈</div>
+                    <div class="balloon balloon-3">🎈</div>
+                    <div class="balloon balloon-4">🎈</div>
+                </div>
+                
+                <button class="start-btn" onclick="startExperience()">
+                    <span>Let's Celebrate! 🎉</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Photo Slideshow Section -->
+        <section id="slideshow" class="section">
+            <div class="slideshow-header">
+                <h2>Our Amazing Memories</h2>
+                <div class="slideshow-controls">
+                    <button id="pauseBtn" onclick="toggleSlideshow()">⏸️</button>
+                    <button id="playBtn" onclick="toggleSlideshow()" style="display: none;">▶️</button>
+                    <button onclick="restartExperience()">🔄</button>
+                </div>
+            </div>
+            
+            <div class="slideshow-container">
+                <div class="slide active" data-caption="Remember this crazy adventure? You always make everything more fun! 📸">
+                    <!-- CUSTOMIZATION: Replace with your photo -->
+                    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Memory 1">
+                </div>
+                <div class="slide" data-caption="Best friends forever! This day was absolutely perfect ✨">
+                    <!-- CUSTOMIZATION: Replace with your photo -->
+                    <img src="https://images.pexels.com/photos/1181624/pexels-photo-1181624.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Memory 2">
+                </div>
+                <div class="slide" data-caption="You're the most amazing friend anyone could ask for! 💖">
+                    <!-- CUSTOMIZATION: Replace with your photo -->
+                    <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Memory 3">
+                </div>
+                <div class="slide" data-caption="So many laughs and unforgettable moments with you! 😂">
+                    <!-- CUSTOMIZATION: Replace with your photo -->
+                    <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Memory 4">
+                </div>
+                <div class="slide" data-caption="Here's to another year of incredible adventures together! 🌟">
+                    <!-- CUSTOMIZATION: Replace with your photo -->
+                    <img src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Memory 5">
+                </div>
+                
+                <div class="slide-caption">
+                    <p id="caption-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Birthday Message Section -->
+        <section id="message" class="section">
+            <div class="message-container">
+                <h2 class="message-title">A Special Message for You</h2>
+                <div class="message-text" id="birthdayMessage">
+                    <!-- CUSTOMIZATION: Replace with your personal message -->
+                    <p data-text="Dear Sarah, on this special day, I want you to know how grateful I am to have you as my best friend.">
+                        <span class="message-line"></span>
+                    </p>
+                    <p data-text="Your kindness, laughter, and incredible spirit light up every room you enter.">
+                        <span class="message-line"></span>
+                    </p>
+                    <p data-text="You've been there through every adventure, every challenge, and every celebration.">
+                        <span class="message-line"></span>
+                    </p>
+                    <p data-text="Thank you for being the most amazing friend anyone could ask for.">
+                        <span class="message-line"></span>
+                    </p>
+                    <p data-text="I hope this new year brings you all the happiness, love, and dreams come true that you deserve.">
+                        <span class="message-line"></span>
+                    </p>
+                    <p data-text="Happy Birthday, beautiful soul! Here's to many more years of friendship and memories! 💖🎉">
+                        <span class="message-line"></span>
+                    </p>
+                </div>
+                
+                <div class="signature">
+                    <p>With love,<br><strong>Your Best Friend</strong></p>
+                    <!-- CUSTOMIZATION: Replace with your name -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Celebration Section -->
+        <section id="celebration" class="section">
+            <div class="celebration-content">
+                <h1 class="celebration-title">🎉 HAPPY BIRTHDAY! 🎉</h1>
+                <div class="sparkles-container" id="sparkles-container"></div>
+                <button class="replay-btn" onclick="restartExperience()">
+                    Celebrate Again! 🎈
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio element (optional - browser permissions may be required) -->
+    <audio id="backgroundMusic" loop>
+        <!-- CUSTOMIZATION: Add your music file -->
+        <!-- <source src="birthday-song.mp3" type="audio/mpeg"> -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
